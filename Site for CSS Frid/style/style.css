@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700;900&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Poppins', sans-serif;
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+	color: #000;
+}
+
+body {
+}
+.wrapper {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.content {
+	display: grid;
+	min-width: 1400px;
+	gap: 40px;
+	grid-template-columns: 1fr 2fr 3fr;
+	grid-template-areas:
+		'header header header'
+		'aside main main'
+		'footer footer footer';
+}
+
+.header {
+	display: grid;
+	grid-template-columns: 2fr 3fr 5fr;
+	grid-template-rows: 80px;
+	grid-area: header;
+
+	align-items: center;
+	gap: 20px;
+
+	border-bottom: 2px solid rgb(167, 167, 167);
+}
+
+.header-logo {
+	font-size: 38px;
+	font-weight: 700;
+}
+.header-search {
+}
+
+.search {
+	border-radius: 20px;
+	width: 300px;
+	height: 40px;
+	font-size: 16px;
+	padding-left: 15px;
+}
+.header-nav {
+	justify-self: end;
+	display: grid;
+	gap: 30px;
+	grid-template-columns: repeat(6, auto);
+	height: 100%;
+	align-items: center;
+	box-sizing: border-box;
+}
+.header-nav__bar {
+}
+.header-nav__bar:hover {
+	border-bottom: 3px solid rgb(255, 169, 169);
+	transition: all 0.1s;
+}
+.icon {
+}
+.icon > img {
+	width: 24px;
+}
+
+.aside {
+	grid-area: aside;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 30px;
+	grid-template-rows: 70px 400px;
+}
+
+.explore {
+	font-size: 34px;
+}
+.explore-list {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(7, 1fr);
+	gap: 20px;
+}
+.explore-items {
+	font-size: 18px;
+}
+.explore-items:hover {
+	font-weight: 700;
+}
+
+.main {
+	grid-area: main;
+}
+.cards-grid {
+	display: grid;
+	width: 100%;
+	gap: 28px;
+	grid-template-columns: repeat(4, minmax(200px, 260px));
+	grid-template-rows: repeat(4, 180px);
+	grid-auto-rows: 380px;
+	grid-template-areas:
+		'wide_1 wide_1 product_1 product_2'
+		'wide_2 wide_2 product_1 product_2'
+		'product_3 product_4 wide_3 wide_3'
+		'product_3 product_4 wide_4 wide_4';
+}
+
+@media (max-width: 1129px) {
+	.cards-grid {
+		grid-template-columns: repeat(2, minmax(180px, 260px));
+		grid-template-rows: repeat(8, 180px);
+		grid-auto-rows: 380px;
+		grid-template-areas:
+			'wide_1 wide_1'
+			'wide_2 wide_2'
+			'product_1 product_2'
+			'product_1 product_2'
+			'wide_3 wide_3'
+			'wide_4 wide_4'
+			'product_3 product_4'
+			'product_3 product_4';
+	}
+}
+
+@media (max-width: 409px) {
+	.cards-grid {
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(12, 140px);
+		grid-auto-rows: 300px;
+		grid-template-areas:
+			'wide_1'
+			'wide_2'
+			'product_1'
+			'product_1'
+			'product_2'
+			'product_2'
+			'wide_3'
+			'wide_4'
+			'product_3'
+			'product_3'
+			'product_4'
+			'product_4';
+	}
+}
+
+.card-demo {
+	display: grid;
+	background: rgb(255, 236, 196);
+	border: 2px solid rgb(167, 167, 167);
+	border-radius: 0;
+	font-size: 30px;
+	font-weight: 900;
+	justify-content: center;
+	align-items: center;
+}
+.card-demo:hover {
+	transform: scale(1.1);
+	transition: 0.3s;
+}
+.sale-1 {
+	grid-area: wide_1;
+	background: rgb(255, 97, 97);
+	color: rgb(181, 255, 97);
+}
+.sale-2 {
+	grid-area: wide_2;
+	background: rgb(181, 255, 97);
+	color: rgb(255, 97, 97);
+}
+.product-1 {
+	grid-area: product_1;
+	background: rgb(97, 134, 255);
+	color: rgb(255, 97, 189);
+}
+.product-2 {
+	grid-area: product_2;
+	background: rgb(255, 97, 189);
+	color: rgb(97, 134, 255);
+}
+.sale-3 {
+	grid-area: wide_3;
+	background: rgb(255, 218, 97);
+	color: rgb(97, 255, 229);
+}
+.sale-4 {
+	grid-area: wide_4;
+	background: rgb(97, 255, 229);
+	color: rgb(255, 218, 97);
+}
+.product-3 {
+	grid-area: product_3;
+	background: rgb(179, 97, 255);
+	color: rgb(97, 255, 131);
+}
+.product-4 {
+	grid-area: product_4;
+	background: rgb(97, 255, 131);
+	color: rgb(179, 97, 255);
+}
+
+.footer {
+	grid-area: footer;
+	height: 100%;
+	margin-top: 100px;
+	border-top: 2px solid rgb(167, 167, 167);
+	padding: 20px;
+}
+
+.footer-link:hover {
+	color: rgb(255, 169, 169);
+	transition: all 0.5s;
+}
